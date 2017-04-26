@@ -39,13 +39,13 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
   });
 
   db.collection('Users').findOneAndUpdate({
-    age: 20
+    _id: new ObjectID("58ffb77963fc72f0c22d345d")
   }, {
     $inc: {
       age: 1
     }
   }, {
-    returnOriginal: 20
+    returnOriginal: false
   }).then((result) => {
     console.log(result);
   });
